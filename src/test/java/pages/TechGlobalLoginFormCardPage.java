@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import utilities.Driver;
 
 import java.util.List;
@@ -24,10 +23,7 @@ public class TechGlobalLoginFormCardPage extends TechGlobalBasePage{
     public WebElement loginButton;
     @FindBy(id = "forgot-password")
     public WebElement forgotPasswordLink;
-    @FindBy(id = "success_lgn")
-    public WebElement messageAfterSuccessfulLogin;
-    @FindBy(id = "logout")
-    public WebElement logoutButton;
+
 
 
 

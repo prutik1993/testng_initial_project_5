@@ -20,4 +20,6 @@ public class TechGlobalResetPasswordPage extends TechGlobalBasePage{
     public WebElement emailBox;
     @FindBy(id = "submit")
     public WebElement submitButton;
+    @FindBy(id = "confirmation_message")
+    public WebElement conformationMessage;
 }

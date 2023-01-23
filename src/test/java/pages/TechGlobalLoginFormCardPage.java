@@ -23,8 +23,10 @@ public class TechGlobalLoginFormCardPage extends TechGlobalBasePage{
     public WebElement loginButton;
     @FindBy(id = "forgot-password")
     public WebElement forgotPasswordLink;
-
-
-
-
+    @FindBy(id = "success_lgn")
+    public WebElement messageAfterSuccessfulLogin;
+    @FindBy(id = "logout")
+    public WebElement logoutButton;
+    @FindBy(id = "error_message")
+    public WebElement errorMessage;
 }

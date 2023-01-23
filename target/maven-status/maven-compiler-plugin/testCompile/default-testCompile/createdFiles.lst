@@ -1,0 +1,11 @@
+scripts/TechGlobalResetPasswordTest.class
+utilities/Driver.class
+pages/TechGlobalLoginFormCardPage.class
+utilities/TestData.class
+scripts/TechGlobalLoginFormCardTest.class
+utilities/ValidateLogin.class
+pages/TechGlobalResetPasswordPage.class
+pages/TechGlobalFrontendTestingHomePage.class
+utilities/ConfigReader.class
+pages/TechGlobalBasePage.class
+scripts/TechGlobalBase.class

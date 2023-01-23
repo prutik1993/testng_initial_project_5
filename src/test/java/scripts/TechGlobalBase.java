@@ -13,18 +13,13 @@ public class TechGlobalBase {
     TechGlobalLoginFormCardPage techGlobalLoginFormCardPage;
     TechGlobalFrontendTestingHomePage techGlobalFrontendTestingHomePage;
     TechGlobalResetPasswordPage techGlobalResetPasswordPage;
-    TechGlobalLoginFormPage techGlobalLoginFormPage;
-
-
 
     @BeforeMethod
     public void setup(){
      driver = Driver.getDriver();
      driver.get(ConfigReader.getProperty("appURL"));
      techGlobalBasePage = new TechGlobalBasePage();
-
     }
-
     @AfterMethod
     public void teardown(){
         Driver.quitDriver();

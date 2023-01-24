@@ -49,7 +49,6 @@
                         <version>2.19.1</version>
                         <configuration>
                             <suiteXmlFiles>
-                                <!-- TestNG suite XML files -->
                                 <suiteXmlFile>regression.xml</suiteXmlFile>
                             </suiteXmlFiles>
                         </configuration>

@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.TechGlobalFrontendTestingHomePage;
 import pages.TechGlobalLoginFormCardPage;
+import utilities.Login;
 import utilities.TestData;
 import utilities.ValidateLogin;
 
@@ -59,7 +60,7 @@ public class TechGlobalLoginFormCardTest extends TechGlobalBase{
         Assert.assertEquals(techGlobalLoginFormCardPage.forgotPasswordLink.getText(), TestData.forgotPasswordLinkText);
     }
         /*
-        Test Case 2: Validate TechGlobal Login Form card valid login
+        Test Case 2: Validate TechGlobal Login Form card valid Login
         Given user is on https://techglobal-training.netlify.app/
         When user clicks on "Practices" dropdown in the header
         And user select the "Frontend Testing" option
@@ -69,15 +70,13 @@ public class TechGlobalLoginFormCardTest extends TechGlobalBase{
         Then user should see “You are logged in” message
         And user should see “LOGOUT” button
        */
-    @Test(priority = 2, description = "Validate TechGlobal Login Form card valid login")
+    @Test(priority = 2, description = "Validate TechGlobal Login Form card valid Login")
     public void validateLoginWithValidCredentials() {
 
         // User enters valid credentials
-        for (int i = 0; i < techGlobalLoginFormCardPage.inputs.size(); i++) {
-            techGlobalLoginFormCardPage.inputs.get(i).sendKeys(TestData.validCredentials[i]);
-        }
-        // User clicks on the Login button
-        techGlobalLoginFormCardPage.loginButton.click();
+        Login.login(techGlobalLoginFormCardPage.inputs,TestData.validCredentials,
+                techGlobalLoginFormCardPage.loginButton);
+
         // Validating that "You are logged in" message is visible
         Assert.assertTrue(techGlobalLoginFormCardPage.messageAfterSuccessfulLogin.isDisplayed());
         Assert.assertEquals(techGlobalLoginFormCardPage.messageAfterSuccessfulLogin.getText(),
@@ -87,7 +86,7 @@ public class TechGlobalLoginFormCardTest extends TechGlobalBase{
         Assert.assertTrue(techGlobalLoginFormCardPage.logoutButton.isEnabled());
     }
        /*
-       Test Case 3: Validate TechGlobal Login Form card valid login and then logout
+       Test Case 3: Validate TechGlobal Login Form card valid Login and then logout
        Given user is on https://techglobal-training.netlify.app/
        When user clicks on "Practices" dropdown in the header
        And user select the "Frontend Testing" option
@@ -97,21 +96,19 @@ public class TechGlobalLoginFormCardTest extends TechGlobalBase{
        And user clicks on “LOGOUT” button
        Then user should be navigated back to Login Form
         */
-    @Test(priority = 3, description = "Validate TechGlobal Login Form card valid login and then logout")
+    @Test(priority = 3, description = "Validate TechGlobal Login Form card valid Login and then logout")
     public void validateLoginWithValidCredentialsAndThanLogout(){
         // User enters valid credentials
-        for (int i = 0; i < techGlobalLoginFormCardPage.inputs.size(); i++) {
-            techGlobalLoginFormCardPage.inputs.get(i).sendKeys(TestData.validCredentials[i]);
-        }
-        // User clicks on the Login button
-        techGlobalLoginFormCardPage.loginButton.click();
+        Login.login(techGlobalLoginFormCardPage.inputs,TestData.validCredentials,
+                techGlobalLoginFormCardPage.loginButton);
+
         // User clicks on the Logout button
         techGlobalLoginFormCardPage.logoutButton.click();
         // Validating that user navigating back to the Login Form
-        Assert.assertEquals(driver.getCurrentUrl(), TestData.loginFormURL);
+        Assert.assertTrue(techGlobalLoginFormCardPage.loginButton.isDisplayed());
     }
        /*
-       Test Case 6: Validate TechGlobal Login Form card invalid login with wrong username
+       Test Case 6: Validate TechGlobal Login Form card invalid Login with wrong username
        Given user is on https://techglobal-training.netlify.app/
        When user clicks on "Practices" dropdown in the header
        And user select the "Frontend Testing" option
@@ -121,7 +118,7 @@ public class TechGlobalLoginFormCardTest extends TechGlobalBase{
        Then user should see “Invalid Username entered!” message
         */
     @Test(priority = 4,
-            description = "Validate TechGlobal Login Form card invalid login with wrong username")
+            description = "Validate TechGlobal Login Form card invalid Login with wrong username")
     public void validateLoginWithWrongUsername(){
         ValidateLogin.validateLogin(techGlobalLoginFormCardPage.inputs,TestData.invalidUsernameValidPassword,
                 techGlobalLoginFormCardPage.loginButton,techGlobalLoginFormCardPage.errorMessage,
@@ -129,7 +126,7 @@ public class TechGlobalLoginFormCardTest extends TechGlobalBase{
 
     }
         /*
-        Test Case 7: Validate TechGlobal Login Form card invalid login with wrong password
+        Test Case 7: Validate TechGlobal Login Form card invalid Login with wrong password
         Given user is on https://techglobal-training.netlify.app/
         When user clicks on "Practices" dropdown in the header
         And user select the "Frontend Testing" option
@@ -138,14 +135,14 @@ public class TechGlobalLoginFormCardTest extends TechGlobalBase{
         And user clicks on “LOGIN” button
         Then user should see “Invalid Password entered!” message
         */
-    @Test(priority = 5, description = "Validate TechGlobal Login Form card invalid login with wrong password")
+    @Test(priority = 5, description = "Validate TechGlobal Login Form card invalid Login with wrong password")
     public void validateLoginWithValidUsernameAndInvalidPassword(){
         ValidateLogin.validateLogin(techGlobalLoginFormCardPage.inputs,TestData.validUsernameInvalidPassword,
                 techGlobalLoginFormCardPage.loginButton,techGlobalLoginFormCardPage.errorMessage,
                 TestData.errorInvalidPasswordMessage);
     }
         /*
-        Test Case 8: Validate TechGlobal Login Form card invalid login with both wrong credentials
+        Test Case 8: Validate TechGlobal Login Form card invalid Login with both wrong credentials
         Given user is on https://techglobal-training.netlify.app/
         When user clicks on "Practices" dropdown in the header
         And user select the "Frontend Testing" option
@@ -154,7 +151,7 @@ public class TechGlobalLoginFormCardTest extends TechGlobalBase{
         And user clicks on “LOGIN” button
         Then user should see “Invalid Username entered!” message
              */
-    @Test(priority = 6, description = "Validate TechGlobal Login Form card invalid login with both wrong credentials")
+    @Test(priority = 6, description = "Validate TechGlobal Login Form card invalid Login with both wrong credentials")
     public void validateLoginWithInvalidCredentials(){
         ValidateLogin.validateLogin(techGlobalLoginFormCardPage.inputs,TestData.invalidCredentials,
                 techGlobalLoginFormCardPage.loginButton,techGlobalLoginFormCardPage.errorMessage,

@@ -7,7 +7,7 @@ import utilities.Driver;
 
 import java.util.List;
 
-public class TechGlobalBasePage {
+public class TechGlobalBasePage  {
 
     public TechGlobalBasePage(){
         PageFactory.initElements(Driver.getDriver(), this);

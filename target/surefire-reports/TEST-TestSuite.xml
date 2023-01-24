@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="93.13" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="95.967" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_341.jdk/Contents/Home/jre/lib"/>
@@ -63,12 +63,12 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="validateLoginFormCard" classname="scripts.TechGlobalLoginFormCardTest" time="0.477"/>
-  <testcase name="validateLoginWithValidCredentials" classname="scripts.TechGlobalLoginFormCardTest" time="2.356"/>
-  <testcase name="validateLoginWithValidCredentialsAndThanLogout" classname="scripts.TechGlobalLoginFormCardTest" time="1.505"/>
-  <testcase name="validateLoginWithWrongUsername" classname="scripts.TechGlobalLoginFormCardTest" time="1.876"/>
-  <testcase name="validateLoginWithValidUsernameAndInvalidPassword" classname="scripts.TechGlobalLoginFormCardTest" time="1.073"/>
-  <testcase name="validateLoginWithInvalidCredentials" classname="scripts.TechGlobalLoginFormCardTest" time="0.893"/>
-  <testcase name="validateForgotPasswordLink" classname="scripts.TechGlobalResetPasswordTest" time="0.191"/>
-  <testcase name="validateResetPasswordLink" classname="scripts.TechGlobalResetPasswordTest" time="0.88"/>
+  <testcase name="validateLoginFormCard" classname="scripts.TechGlobalLoginFormCardTest" time="0.434"/>
+  <testcase name="validateLoginWithValidCredentials" classname="scripts.TechGlobalLoginFormCardTest" time="2.222"/>
+  <testcase name="validateLoginWithValidCredentialsAndThanLogout" classname="scripts.TechGlobalLoginFormCardTest" time="2.467"/>
+  <testcase name="validateLoginWithWrongUsername" classname="scripts.TechGlobalLoginFormCardTest" time="0.935"/>
+  <testcase name="validateLoginWithValidUsernameAndInvalidPassword" classname="scripts.TechGlobalLoginFormCardTest" time="2.011"/>
+  <testcase name="validateLoginWithInvalidCredentials" classname="scripts.TechGlobalLoginFormCardTest" time="1.767"/>
+  <testcase name="validateForgotPasswordLink" classname="scripts.TechGlobalResetPasswordTest" time="0.215"/>
+  <testcase name="validateResetPasswordLink" classname="scripts.TechGlobalResetPasswordTest" time="1.814"/>
 </testsuite>
